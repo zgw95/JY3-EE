@@ -1,21 +1,16 @@
 package com.zgw.dao;
 
-import java.sql.ResultSet;
+import com.zgw.pojo.User;
 
-/**
- * UserDao接口
- */
+import java.util.List;
+
 public interface UserDao {
+    //查询全部用户
+    List<User> getAllUser();
 
-    //注册
-    void register(String userName,String passWord);
+    //删除指定用户byID
+    void deleteUser(String num);
 
-    //登录
-    boolean login(String userName, String passWord);
-
-    //修改密码(用户名，原密码，新密码)
-    boolean updatePassword(String userName, String oldPassword,String newPassword);
-
-    //查看全部用户信息
-    ResultSet selectAllUser();
+    //修改指定用户byID
+    void  updateUser(User user);
 }
